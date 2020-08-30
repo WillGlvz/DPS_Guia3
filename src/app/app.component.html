@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 center">
+      <h3>Salario empleados</h3>
+    </div>  
+  </div>
+  <div class="row">
+    <div class="input-field col s4 offset-s4">
+      <input id="first_name" type="text" class="validate">
+      <label for="first_name">Nombre empleado</label>
+    </div>
+    <div class="input-field col s4 offset-s4">
+      <input id="sueldo" type="number" class="validate">
+      <label for="sueldo">Suelto bruto</label>
+    </div>
+    <div class="col s4 offset-s4 center">
+      <a class="waves-effect waves-light btn" (click)="aviso()">Calcular</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6 offset-s3 center">
+      <table [hidden]="contador == 0" class="centered striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>ISSS</th>
+            <th>Renta</th>
+            <th>AFP</th>
+            <th>Sueldo Bruto</th>
+            <th>Sueldo Neto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let temployed of empleados">
+            <td>{{temployed.nombre}}</td>
+            <td>${{temployed.isss}}</td>
+            <td>${{temployed.renta}}</td>
+            <td>${{temployed.afp}}</td>
+            <td>${{temployed.bruto}}</td>
+            <td>${{temployed.total}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
